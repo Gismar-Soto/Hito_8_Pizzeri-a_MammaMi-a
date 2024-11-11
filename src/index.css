@@ -1,0 +1,481 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  flex: 1; 
+}
+
+/* Estilos del header */
+.header {
+  background: url('https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_1280.jpg') center/cover;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+/* Estilos de la tarjeta de pizza */
+.pizza-card {
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  margin: var(--card-margin);
+}
+
+.pizza-img {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: var(--border-radius-card);
+  border-top-right-radius: var(--border-radius-card);
+  width: 100%;
+  height: auto;
+}
+
+.pizza-body {
+  padding: 20px;
+}
+
+.pizza-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.pizza-ingredients-label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.pizza-icon {
+  color: orange;
+  font-size: 1.2rem;
+}
+
+.pizza-ingredients-list {
+  font-size: 0.85rem;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.pizza-ingredients {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.pizza-ingredient-item {
+  display: flex;
+  align-items: center;
+}
+
+.pizza-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pizza-btn:hover {
+  background-color: #0056b3;
+}
+
+.pizza-btn-dark {
+  background-color: #343a40;
+}
+
+.pizza-btn-dark:hover {
+  background-color: #23272b;
+}
+
+.pizza-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Estilos para el carrito */
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-item img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Estilos para los controles de cantidad */
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.d-flex span {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Footer */
+.Footer {
+  background-color: #333;
+  color: white;
+  padding: 6px 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .pizza-img {
+    height: 150px;
+  }
+
+  .pizza-title {
+    font-size: 1.25rem;
+  }
+
+  .pizza-price {
+    font-size: 1rem;
+  }
+
+  .pizza-btn {
+    font-size: 0.9rem;
+  }
+
+  .cart-item img {
+    width: 120px;
+    height: 80px;
+  }
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.cart-item h5 {
+  margin-bottom: 5px;
+}
+
+.cart-item p {
+  margin: 0;
+}
+
+.cart-item .d-flex button {
+  margin-right: 10px;
+}
+
+.cart-item .d-flex span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.btn-danger {
+  padding: 5px 10px;
+}
+
+.btn-primary {
+  padding: 5px 10px;
+}
+
+.btn-secondary {
+  padding: 5px 10px;
+}
+/* Estilo general para el carrito */
+.cart-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para la imagen del carrito */
+.cart-item-image {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Estilo para los detalles del producto en el carrito */
+.cart-item-info {
+  max-width: 250px;
+}
+
+.cart-item-info h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cart-item-info p {
+  margin: 0;
+  color: #555;
+}
+
+.cart-item-actions button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.quantity-display {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Estilo para el botón de pago */
+.btn-success {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cart-item-info {
+    max-width: 200px;
+  }
+
+  .cart-item-image {
+    width: 80px;
+  }
+
+  .cart-item-actions button {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .quantity-display {
+    font-size: 1rem;
+  }
+}
+.pizza-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.pizza-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de la pizza */
+.pizza-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Contenido de la tarjeta */
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.pizza-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Ingredientes */
+.pizza-ingredients {
+  margin-bottom: 10px;
+}
+
+.pizza-ingredients-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff9800;  /* Color del icono de ingredientes */
+}
+
+.pizza-ingredients-list {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pizza-ingredients-list li {
+  display: inline;
+  margin-right: 5px;
+}
+
+.pizza-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+/* Botones */
+.btn-outline-secondary {
+  border: 1px solid #6c757d;
+  color: #6c757d;
+  padding: 8px 16px;
+  border-radius: 30px;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 30px;
+}
+
+.btn-dark:hover {
+  background-color: #23272b;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .pizza-img {
+    height: 150px;
+  }
+
+  .pizza-title {
+    font-size: 1.25rem;
+  }
+
+  .pizza-price {
+    font-size: 1.1rem;
+  }
+
+  .btn-outline-secondary, .btn-dark {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+/* Ajustes para los controles de cantidad */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.quantity-controls .btn {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.quantity-controls .quantity-display {
+  width: 40px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.cart-item-actions .btn-danger {
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.not-found-title {
+  font-size: 72px;
+  font-weight: bold;
+  color: #343a40;
+  text-shadow: 2px 2px #6c757d;
+}
+
+.not-found-text {
+  font-size: 24px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.not-found-gif {
+  width: 300px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.not-found-button {
+  background-color: #17a2b8;
+  border: none;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.not-found-button:hover {
+  background-color: #138496;
+}
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
