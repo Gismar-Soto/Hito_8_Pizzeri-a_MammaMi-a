@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import UserContext from '../components/UserContext';
+import UserContext from '../context/UserContext';
 import { Container, Form, Button } from 'react-bootstrap';
 
 const Login = () => {

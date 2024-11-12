@@ -8,7 +8,7 @@ import Register from './Pages/Register';
 import Cart from './Pages/Cart';
 import Pizza from './Pages/Pizza';
 import NotFound from './Pages/NotFound';
-import { useUser } from './components/UserContext';
+import { useUser } from './context/UserContext';
 
 const App = () => {
   const { token } = useUser();

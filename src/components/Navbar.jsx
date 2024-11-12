@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { FaShoppingCart,FaUser, FaSignInAlt, FaUserCircle, FaPizzaSlice } from 'react-icons/fa';
-import { useCart } from './CartContext';
-import { useUser } from './UserContext';
+import { useCart } from '../context/CartContext';
+import { useUser } from '../context/UserContext';
 
 const MyNavbar = () => {
     const { total } = useCart();

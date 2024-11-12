@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard, faTrash } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import { useCart } from '../components/CartContext';
-import { useUser } from '../components/UserContext';
+import { useCart } from '../context/CartContext';
+import { useUser } from '../context/UserContext';
 
 const Cart = () => {
     const { cart, incrementQuantity, decrementQuantity, removeFromCart, total } = useCart();
@@ -49,7 +49,7 @@ const Cart = () => {
                                         src={item.img} 
                                         alt={item.name} 
                                         className="cart-item-image me-3" 
-                                        style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '8px' }} 
+                                        style={{ width: '290px', height: '150px', objectFit: 'cover', borderRadius: '8px' }} // Tamaño aumentado
                                     />
                                     <div className="cart-item-info">
                                         <h5 className="mb-1"><strong>{item.name}</strong></h5>
@@ -70,8 +70,8 @@ const Cart = () => {
                     </ul>
                     <div className="mt-4 text-end">
                         <h5>Total: ${total.toLocaleString('es-ES')}</h5>
-                        <button onClick={handleCheckout} className="btn btn-primary mt-2 mb-3"> {/* Clase mb-3 para margen inferior */}
-                            <FontAwesomeIcon icon={faCreditCard} /> Realizar Compra
+                        <button onClick={handleCheckout} className="btn btn-success mt-2 mb-3"> {/* Cambiado a btn-success para color verde */}
+                            <FontAwesomeIcon icon={faCreditCard} /> Pagar Compra
                         </button>
                     </div>
                 </div>

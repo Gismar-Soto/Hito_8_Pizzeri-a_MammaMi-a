@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faArrowLeft, faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
-import { useCart } from "../components/CartContext";
+import { useCart } from "../context/CartContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Pizza = () => {

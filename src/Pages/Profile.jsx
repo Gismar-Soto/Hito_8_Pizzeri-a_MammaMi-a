@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Container, Button } from 'react-bootstrap';
-import UserContext from '../components/UserContext';
+import UserContext from '../context/UserContext';
 
 const Profile = () => {
   const { email, logout } = useContext(UserContext);

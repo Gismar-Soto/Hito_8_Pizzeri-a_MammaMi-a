@@ -2,8 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { CartProvider } from './components/CartContext';
-import { UserProvider } from './components/UserContext';
+import { CartProvider } from './context/CartContext';
+import { UserProvider } from './context/UserContext';
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 

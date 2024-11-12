@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Importa Link
 import { FaPizzaSlice, FaShoppingCart, FaEye } from "react-icons/fa";
-import { useCart } from '../components/CartContext';
+import { useCart } from '../context/CartContext';
 
 const Home = () => {
     const { addToCart } = useCart(); // Usar el contex
