@@ -14,16 +14,16 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = (pizza) => {
         const existingPizza = cart.find(item => item.id === pizza.id);
+        let updatedCart;
         if (existingPizza) {
-            const updatedCart = cart.map(item =>
+            updatedCart = cart.map(item =>
                 item.id === pizza.id ? { ...item, quantity: item.quantity + 1 } : item
             );
-            setCart(updatedCart);
         } else {
-            const updatedCart = [...cart, { ...pizza, quantity: 1 }];
-            setCart(updatedCart);
+            updatedCart = [...cart, { ...pizza, quantity: 1 }];
         }
-        localStorage.setItem('cart', JSON.stringify(cart));
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
     };
 
     const removeFromCart = (id) => {
@@ -60,3 +60,5 @@ export const CartProvider = ({ children }) => {
         </CartContext.Provider>
     );
 };
+
+export default CartContext;

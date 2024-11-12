@@ -1,66 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import UserContext from '../components/UserContext';
+import { Container, Form, Button } from 'react-bootstrap';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
+  const [error, setError] = useState('');
+  const { login } = useContext(UserContext);
 
-  const validateForm = () => {
-    const newErrors = {};
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // validar emails
-
-    if (!emailPattern.test(email)) {
-      newErrors.email = 'Por favor ingrese un correo electrónico válido.';
-    }
-    if (password.length < 6) {
-      newErrors.password = 'La contraseña debe tener al menos 6 caracteres.';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log('Iniciando sesión con:', { email, password });
-      // Lógica de inicio de sesión 
+    try {
+      await login({ email, password });
+      alert('Inicio de sesión exitoso');
+    } catch (err) {
+      setError(err.message || 'Error al iniciar sesión');
     }
   };
 
   return (
-    <div className="container mt-4">
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          {errors.email && <small className="text-danger">{errors.email}</small>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Contraseña:</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          {errors.password && <small className="text-danger">{errors.password}</small>}
-        </div>
-        <button type="submit" className="btn btn-primary mt-3">
-          Iniciar Sesión
-        </button>
-      </form>
-    </div>
+    <Container className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
+      <div className="w-100" style={{ maxWidth: '400px' }}>
+        <h2 className="text-center mb-4">Login</h2>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group id="email">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Ingrese su dirección de correo"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group id="password" className="mt-3">
+            <Form.Label>Contraseña</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </Form.Group>
+          {error && <p className="text-danger mt-2">{error}</p>}
+          <Button type="submit" className="w-100 mt-4" variant="primary">
+            Login
+          </Button>
+        </Form>
+      </div>
+    </Container>
   );
 };
 
